@@ -1,0 +1,20 @@
+FROM golang:1.16-alpine as builder
+
+WORKDIR /goapp
+
+COPY go.mod go.mod
+COPY hello.go hello.go
+
+RUN go build -o hello
+
+ENTRYPOINT [ "/goapp/hello" ]
+
+# --------------------------------- #
+
+FROM scratch
+
+WORKDIR /goapp
+
+COPY --from=builder /goapp/hello /goapp/hello
+
+ENTRYPOINT [ "/goapp/hello" ]
