@@ -8,13 +8,13 @@ docker run --rm efepimenta/codeeducation
 
 ### prod
 ```
-docker build -t efepimenta/codeeducation:prod . -f Dockerfile.prod
-docker run --rm efepimenta/codeeducation:prod
+docker build -t efepimenta/codeeducation:latest . -f Dockerfile.prod
+docker run --rm efepimenta/codeeducation:latest
 ```
 
 ### no docker hub
 [https://hub.docker.com/repository/docker/efepimenta/codeeducation](https://hub.docker.com/repository/docker/efepimenta/codeeducation)
 
 ```
-docker push efepimenta/codeeducation:prod
+docker pull efepimenta/codeeducation
 ```
